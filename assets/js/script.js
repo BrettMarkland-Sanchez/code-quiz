@@ -1,46 +1,46 @@
-const quizBox = $('#quizBox');
-const scores = $('#scores');
-const quizNav = $('#quizNav');
-const scoresNav = $('#scoresNav');
-const desktop = $('#desktop');
-const mobile = $('#mobile');
+const quizBox = document.getElementById('quizBox');
+const scores = document.getElementById('scores');
+const quizNav = document.getElementById('quizNav');
+const scoresNav = document.getElementById('scoresNav');
+const desktop = document.getElementById('desktop');
+const mobile = document.getElementById('mobile');
 
-quizNav.on('click', function(){
+quizNav.onclick = function(){
     showQuiz();
-});
+};
 
-scoresNav.on('click', function(){
+scoresNav.onclick = function(){
     showScores();
-});
+};
 
 let quizActive = true;
 
 // Uses the window width to determine which #quiz child-id to show
 function showQuiz(){
     hideScores();
-    if($(window).width() < 767){
-        desktop.addClass('hidden');
-        mobile.removeClass('hidden');
+    if(window.innerWidth < 767){
+        desktop.classList.add('hidden');
+        mobile.classList.remove('hidden');
     } else {
-        mobile.addClass('hidden');
-        desktop.removeClass('hidden');
+        mobile.classList.add('hidden');
+        desktop.classList.remove('hidden');
     };
-    quizBox.removeClass('hidden');
+    quizBox.classList.remove('hidden');
     quizActive = true;
 }
 
 function showScores(){
     hideQuiz();
-    scores.removeClass('hidden');
+    scores.classList.remove('hidden');
 }
 
 function hideQuiz(){
-    quizBox.addClass('hidden');
+    quizBox.classList.add('hidden');
     quizActive = false;
 }
 
 function hideScores(){
-    scores.addClass('hidden');
+    scores.classList.add('hidden');
 }
 
 

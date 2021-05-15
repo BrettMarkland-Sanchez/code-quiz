@@ -84,11 +84,10 @@ main {
     border: 4px solid darkslategray;
     box-shadow: 4px 4px 4px 4px gray;
     display: flex;
-    justify-content: center;
 }
 
 #quiz {
-    
+    justify-content: center;
 }
 
 #start {
@@ -98,5 +97,9 @@ main {
 }
 
 #timer {
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
