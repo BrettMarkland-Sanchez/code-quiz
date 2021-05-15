@@ -1,4 +1,4 @@
-const quiz = $('#quiz');
+const quizBox = $('#quizBox');
 const scores = $('#scores');
 const quizNav = $('#quizNav');
 const scoresNav = $('#scoresNav');
@@ -13,6 +13,9 @@ scoresNav.on('click', function(){
     showScores();
 });
 
+let quizActive = true;
+
+// Uses the window width to determine which #quiz child-id to show
 function showQuiz(){
     hideScores();
     if($(window).width() < 767){
@@ -22,7 +25,8 @@ function showQuiz(){
         mobile.addClass('hidden');
         desktop.removeClass('hidden');
     };
-    quiz.removeClass('hidden');
+    quizBox.removeClass('hidden');
+    quizActive = true;
 }
 
 function showScores(){
@@ -31,11 +35,21 @@ function showScores(){
 }
 
 function hideQuiz(){
-    quiz.addClass('hidden');
+    quizBox.addClass('hidden');
+    quizActive = false;
 }
 
 function hideScores(){
     scores.addClass('hidden');
 }
 
+
+
+// Makes #quiz the homepage
 showQuiz();
+
+window.onresize = function() {
+    if(quizActive){
+        showQuiz();
+    }
+};
