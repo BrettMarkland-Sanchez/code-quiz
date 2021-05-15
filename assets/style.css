@@ -25,6 +25,7 @@ nav {
 }
 
 nav a {
+    text-decoration: none;
     font-size: large;
     font-weight: 400;
     background-color: cadetblue;
@@ -47,4 +48,12 @@ main {
 #highscore {
     margin-right: 1em;
     float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+#desktop {
+    display: flex;
 }

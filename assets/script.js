@@ -1,22 +1,41 @@
-let quiz = $('#quiz');
-let scores = $('#scores');
-let quizNav = $('#quizNav');
-let scoresNav = $('#scoresNav');
+const quiz = $('#quiz');
+const scores = $('#scores');
+const quizNav = $('#quizNav');
+const scoresNav = $('#scoresNav');
+const desktop = $('#desktop');
+const mobile = $('#mobile');
 
-quizNav.addEventListener()
+quizNav.on('click', function(){
+    showQuiz();
+});
 
-if($(window).width() < 767)
-{
-   // change functionality for smaller screens
+scoresNav.on('click', function(){
+    showScores();
+});
 
-} else {
-   // change functionality for larger screens
+function showQuiz(){
+    hideScores();
+    if($(window).width() < 767){
+        desktop.addClass('hidden');
+        mobile.removeClass('hidden');
+    } else {
+        mobile.addClass('hidden');
+        desktop.removeClass('hidden');
+    };
+    quiz.removeClass('hidden');
 }
 
-function showQuiz() {
-
+function showScores(){
+    hideQuiz();
+    scores.removeClass('hidden');
 }
 
-function showScores() {
-
+function hideQuiz(){
+    quiz.addClass('hidden');
 }
+
+function hideScores(){
+    scores.addClass('hidden');
+}
+
+showQuiz();
