@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>JS Code Quiz by BMS</title>
-</head>
-<body>
-    <header>
-        <h1>JavaScript Fundamentals Quiz</h1>
-    </header>
-    <nav>
-        <a>Quiz</a>
-        <a>Scores</a>
-    </nav>
-    <main>
-        <span>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/reset.css">
+        <link rel="stylesheet" href="./assets/style.css">
+        <title>JS Code Quiz by BMS</title>
+    </head>
+    <body>
+        <header>
+            <h1>JavaScript Fundamentals Quiz</h1>
+            <nav>
+                <a href="#" id="quizNav">Quiz</a>
+                <a href="#" id="scoresNav">Scores</a>
+            </nav>
+        </header>
+        <main>
             <div id="top"><h2>Top Player: </h2></div>
             <div id="highscore"><h2>Highscore: </h2></div>
-        </span>
-        <object data="./layouts/desktop.html">
-        </object>
-        <object data="./layouts/mobile.html">
-        </object>
-    </main>
-</body>
+            <div id="quiz"></div>
+            <div id="scores"></div>
+        </main>   
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="./assets/script.js"></script>
+    </body>
 </html>

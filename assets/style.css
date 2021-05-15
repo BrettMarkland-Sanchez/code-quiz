@@ -1,0 +1,50 @@
+h2 {
+    font-size: large;
+}
+
+body {
+    background-color: blanchedalmond;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    padding: 4px;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 900;
+    background-color: indianred;
+}
+
+header h1 {
+    padding: 1em;
+}
+
+nav {
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+nav a {
+    font-size: large;
+    font-weight: 400;
+    background-color: cadetblue;
+    padding: 5px;
+    color: #fff;
+    border: 2px solid rgb(65, 61, 124);
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+}
+
+main {
+    margin-top: .5em;
+}
+
+#top {
+    margin-left: 1em;
+    float: left;
+}
+
+#highscore {
+    margin-right: 1em;
+    float: right;
+}
