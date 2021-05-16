@@ -22,27 +22,37 @@
                 <h2 id="highscore">Highscore: </h2>
             </div>
             <div id="quizBox">
-                <div id="desktop">
-                    <div id="quiz">
+                <div id="game">
+                    <div id="quiz" class="box">
+                        <h2 id="question" class="hidden"></h2>
+                        <div id="answers" class="hidden">
+                            <button id="a" class="btn"></button>
+                            <button id="b" class="btn"></button>
+                            <button id="c" class="btn"></button>
+                            <button id="d" class="btn"></button>
+                        </div>
                         <button id="start">Start</button>
                     </div>
-                    <div id="timer">
-                        <p>
-                            You will have 10 minutes to correctly answer as many questions as possible.
-                        </p>
-                        <p>
-                            Each question will be multiple choice out of four and will be worth 1 point if answered correctly.
-                        </p>
-                        <p>
-                            No points will be lost for an incorrect answer, but 30 seconds will be subtracted from the timer.
-                        </p>
-                        <p>
-                            Good luck!
-                        </p>
+                    <div id="clock" class="box">
+                        <div id="score" class="hidden"></div>
+                        <div id="timer">
+                            <p>
+                                You will have 10 minutes to correctly answer as many questions as possible.
+                            </p>
+                            <br>
+                            <p>
+                                Each question will be multiple choice out of four and will be worth 1 point if answered correctly.
+                            </p>
+                            <br>
+                            <p>
+                                No points will be lost for an incorrect answer, but 30 seconds will be subtracted from the timer.
+                            </p>
+                            <br>
+                            <p>
+                                Good luck!
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div id="mobile">Mobile
-
                 </div>
             </div>
             <div id="scores">Scores</div>
