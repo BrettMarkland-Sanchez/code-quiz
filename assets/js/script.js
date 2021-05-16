@@ -9,6 +9,8 @@ const start = document.getElementById('start');
 const quiz = document.getElementById('quiz');
 const timer = document.getElementById('timer');
 const clock = document.getElementById('clock');
+let highscore = document.getElementById('highscore');
+let topPlayer = document.getElementById('top');
 let score = document.getElementById('score');
 let question = document.getElementById('question');
 let answers = document.getElementById('answers');
@@ -45,12 +47,22 @@ let q3 = {
     key: "d",
     explanation: "Java is an OOP programming language while JavaScript is an OOP scripting language. The basic difference between JavaScript and Java is that the functions are values, and there is no hard distinction between methods and fields."
 }
+let q4 = {
+    question: "4) The meaning for Augmenting classes is that ___________.",
+    a:"objects inherit prototype properties even in a dynamic state",
+    b:"objects inherit prototype properties only in a dynamic state",
+    c:"objects inherit prototype properties in the static state",
+    d:"object doesn’t inherit prototype properties in the static state",
+    key: "a",
+    explanation: "JavaScript’s prototype-based inheritance mechanism is dynamic an object inherits properties from its prototype, even if the prototype changes after the object is created. This means that we can augment JavaScript classes simply by adding new methods to their prototype objects."
+}
 
-let quizArr = new Array(20);
+let quizArr = [];
 
 quizArr[0] = q1;
 quizArr[1] = q2;
 quizArr[2] = q3;
+quizArr[3] = q4;
 
 start.onclick = function(){
     startQuiz();
@@ -104,6 +116,10 @@ function startQuiz(){
 }
 
 a.onclick = function(){
+    if(count == quizArr.length-1){
+        gameOver(points);
+        return;
+    };
     if(quizArr[count].key == 'a'){
         points++;
         updateScore();
@@ -113,6 +129,10 @@ a.onclick = function(){
 }
 
 b.onclick = function(){
+    if(count == quizArr.length-1){
+        gameOver(points);
+        return;
+    };
     if(quizArr[count].key == 'b'){
         points++;
         updateScore();
@@ -122,6 +142,10 @@ b.onclick = function(){
 }
 
 c.onclick = function(){
+    if(count == quizArr.length-1){
+        gameOver(points);
+        return;
+    };
     if(quizArr[count].key == 'c'){
         points++;
         updateScore();
@@ -131,6 +155,10 @@ c.onclick = function(){
 }
 
 d.onclick = function(){
+    if(count == quizArr.length-1){
+        gameOver(points);
+        return;
+    };
     if(quizArr[count].key == 'd'){
         points++;
         updateScore();
@@ -158,6 +186,7 @@ let timeLeft = 600;
 let points = 0;
 let minutes = Math.floor((timeLeft % (60 * 60)) / (60));
 let seconds = Math.floor(timeLeft % (60));
+let x;
 
 function setTimer(){
     score.classList.remove('hidden');
@@ -165,13 +194,13 @@ function setTimer(){
     clock.style.flexDirection = 'column';
     updateScore();
     timer.innerHTML = minutes + "m " + seconds + "s ";
-    let x = setInterval(function(){
+    x = setInterval(function(){
         minutes = Math.floor((timeLeft % (60 * 60)) / (60));
         seconds = Math.floor(timeLeft % (60));
         timer.innerHTML = minutes + "m " + seconds + "s ";
         if (timeLeft < 1) {
             clearInterval(x);
-            quiz.innerHTML = '<h2>Game Over.<h2>'
+            quiz.innerHTML = '<h2>Game Over<h2>'
           }
         timeLeft--;
     }, 1000);
@@ -181,7 +210,27 @@ function updateScore(){
     score.innerHTML = 'Score: ' + points;
 }
 
+let initials;
 
+function gameOver(points){
+    clearInterval(x);
+    quiz.innerHTML = "Game Over <p>Refresh to play again!</p>";
+    quiz.classList.add('gameOver');
+    do{
+        initials = window.prompt("Save your score!", "ZZZ");
+    }while(initials.length != 3);
+    localStorage.setItem(initials, points);
+    topPlayer.innerHTML = 'Top Player: ' + initials;
+    highscore.innerHTML = 'Highscore: ' + points;
+}
+
+let scoresArr = [];
+
+for (var i = 0; i < localStorage.length; i++){
+    scoresArr.push(" "+localStorage.key(i)+" "+localStorage.getItem(localStorage.key(i)));
+}
+
+scores.innerHTML = scoresArr;
 
 // Makes #quiz the homepage
 showQuiz();

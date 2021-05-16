@@ -115,7 +115,7 @@ main {
 }
 
 #start {
-    font-size: 1.5em;
+    font-size: 30pt;
     padding: 2% 4% 2% 4%;
     align-self: center;
 }
@@ -135,4 +135,20 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#scores {
+    text-align: center;
+    font-size: 2em;
+}
+
+.gameOver {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#quiz p {
+    font-size: .5em;
+    font-weight: normal;
 }
