@@ -56,13 +56,72 @@ let q4 = {
     key: "a",
     explanation: "JavaScript’s prototype-based inheritance mechanism is dynamic an object inherits properties from its prototype, even if the prototype changes after the object is created. This means that we can augment JavaScript classes simply by adding new methods to their prototype objects."
 }
+let q5 = {
+    question: "5) The property of JSON() method is __________.",
+    a:"it can be invoked manually as object.JSON()",
+    b:"it will be automatically invoked by the compiler",
+    c:"it is invoked automatically by the JSON.stringify() method",
+    d:"it cannot be invoked in any form",
+    key: "c",
+    explanation: "A common use of JSON is to exchange data to/from a web server. When sending data to a web server, the data has to be a string. In that case json.strigify() is used to convert a javascript object into a string."
+}
+let q6 = {
+    question: "6) When a class B can extend another class A, we say that?",
+    a:"A is the superclass and B is the subclass",
+    b:"B is the superclass and A is the subclass",
+    c:"Both A and B are the superclass",
+    d:"Both A and B are the subclass",
+    key: "a",
+    explanation: "Superclass is the class from which subclasses are defined. Subclasses are also called extensions of superclass.therefore in the above scenario A will be superclass and B will be subclass."
+}
+let q7 = {
+    question: "7) If A is the superclass and B is the subclass, then subclass inheriting the superclass can be represented as _________.",
+    a:"B=inherit(A);",
+    b:"B=A.inherit();",
+    c:"B.prototype=inherit(A);",
+    d:"B.prototype=inherit(A.prototype);",
+    key: "c",
+    explanation: "inherit() function is a predefined function in javascript which is used to inherit properties of another class. The subclass B inherits the prototype of the class A."
+}
+let q8 = {
+    question: "8) The snippet that filters the filtered set is __________.",
+    a:"var t=new FilteredSet(s, {function(s) {return !(x instanceof Set);});",
+    b:"var t=new FilteredSet{function(s) {return !(x instanceof Set);});",
+    c:"var t=new FilteredSet(s, {function(s) {return (x instanceof Set);});",
+    d:"var t=new FilteredSet(s, {function(s) {return x;});",
+    key: "a",
+    explanation: "The instanceof operator is used to check the type of an object at run time. The instanceof operator returns a boolean value that indicates if an object is an instance of a particular class."
+}
+let q9 = {
+    question: "9) The method that can be used to create new properties and also to modify the attributes of existing properties is _________.",
+    a:"Object.defineProperty()",
+    b:"Object.defineProperties()",
+    c:"Both Object.defineProperty() and Object.defineProperties()",
+    d:"Object.inherit()",
+    key: "c",
+    explanation: "The method Object.defineProperty() defines a new property directly on an object, or modifies an existing property on an object, and returns the object.Both Object.defineProperty() and Object.defineProperties() can be used todefine new properties."
+}
+let q10 = {
+    question: "10) Do functions in JavaScript necessarily return a value?",
+    a:"It is mandatory",
+    b:"Not necessary",
+    c:"Few functions return values by default",
+    d:"some functions do not return any value",
+    key: "c",
+    explanation: "Functions generally have a return statement and hence usually returns a value. Some functions which does not have a return statement returns value by default during execution."
+}
+let q11 = {
+    question: "11) If you have a function f and an object o, you can define a method named m of o with ________.",
+    a:"o.m=m.f;",
+    b:"o.m=f;",
+    c:"o=f.m;",
+    d:"o=f;",
+    key: "b",
+    explanation: "A method is nothing more than a JavaScript function that is stored in a property of an object. If you have a function f and an object o, you can define a method named m of o with the following line: o.m = f;"
+}
 
-let quizArr = [];
 
-quizArr[0] = q1;
-quizArr[1] = q2;
-quizArr[2] = q3;
-quizArr[3] = q4;
+let quizArr = [q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11];
 
 start.onclick = function(){
     startQuiz();
@@ -220,7 +279,7 @@ function gameOver(points){
         initials = window.prompt("Save your score!", "ZZZ");
     }while(initials.length != 3);
     localStorage.setItem(initials, points);
-    topPlayer.innerHTML = 'Top Player: ' + initials;
+    topPlayer.innerHTML = 'Recent Player: ' + initials;
     highscore.innerHTML = 'Highscore: ' + points;
 }
 
