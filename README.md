@@ -3,6 +3,8 @@
 
 The goal of this Coding Bootcamp assignment is to create a JavaScript coding quiz modeled after multiple-choice questions that might be asked in an interview setting.
 
+Deployed site: https://brettmarkland-sanchez.github.io/bms-wk-4-hw/
+
 Success is determined based on the following acceptance criteria:
 
 ## Acceptance Criteria
