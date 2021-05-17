@@ -19,6 +19,9 @@ WHEN the game is over
 THEN I can save my initials and my score  
 
 ## Screenshots
-![]()
-![]()
-![]()
+### Main
+![Main](https://i.ibb.co/2MDQmxV/main.png)
+### Quiz
+![Quiz](https://i.ibb.co/bNWT4hq/quiz.png)
+### Scores
+![Scores](https://i.ibb.co/6YLcqNw/scores.png)
