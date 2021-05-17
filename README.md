@@ -1,7 +1,7 @@
 # bms-wk-4-hw
 ## 04 Web APIs: Code Quiz
 
-The goal of this Coding Bootcamp project is to create a JavaScript coding quiz modeled after multiple-choice questions that might be asked in an interview setting.
+The goal of this Coding Bootcamp assignment is to create a JavaScript coding quiz modeled after multiple-choice questions that might be asked in an interview setting.
 
 Success is determined based on the following acceptance criteria:
 
@@ -19,3 +19,6 @@ WHEN the game is over
 THEN I can save my initials and my score  
 
 ## Screenshots
+![]()
+![]()
+![]()
